@@ -39,3 +39,53 @@ FiMBbtn.addEventListener('click', function() {
 });
 
 document.body.appendChild(FiMBbtn);
+
+let offsetX = 0;
+let offsetY = 0;
+let isDragging = false;
+
+FiMBbtn.addEventListener('mousedown', startDrag);
+FiMBbtn.addEventListener('touchstart', startDrag);
+
+document.addEventListener('mousemove', drag);
+document.addEventListener('touchmove', drag);
+
+document.addEventListener('mouseup', stopDrag);
+document.addEventListener('touchend', stopDrag);
+
+function startDrag(e) {
+    isDragging = true;
+    const rect = FiMBbtn.getBoundingClientRect();
+    if (e.type === 'mousedown') {
+        offsetX = e.clientX - rect.right;
+        offsetY = e.clientY - rect.bottom;
+    } else if (e.type === 'touchstart') {
+        offsetX = e.touches[0].clientX - rect.right;
+        offsetY = e.touches[0].clientY - rect.bottom;
+    }
+}
+
+function drag(e) {
+    if (!isDragging) return;
+    e.preventDefault();
+    let posX, posY;
+    if (e.type === 'mousemove') {
+        posX = e.clientX;
+        posY = e.clientY;
+    } else if (e.type === 'touchmove') {
+        posX = e.touches[0].clientX;
+        posY = e.touches[0].clientY;
+    }
+    FiMBbtn.style.right = `${window.innerWidth - (posX - offsetX)}px`;
+    FiMBbtn.style.bottom = `${window.innerHeight - (posY - offsetY)}px`;
+}
+
+function stopDrag() {
+    isDragging = false;
+}
+
+document.addEventListener('touchmove', function(e) {
+    if (isDragging) {
+        e.preventDefault();
+    }
+}, { passive: false });
