@@ -89,3 +89,17 @@ document.addEventListener('touchmove', function(e) {
         e.preventDefault();
     }
 }, { passive: false });
+
+function buttonVisibility() {
+    var button = document.querySelector('button');
+    if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement) {
+        button.style.display = 'none';
+    } else {
+        button.style.display = 'block';
+    }
+}
+
+document.addEventListener('fullscreenchange', buttonVisibility);
+document.addEventListener('webkitfullscreenchange', buttonVisibility);
+document.addEventListener('mozfullscreenchange', buttonVisibility);
+document.addEventListener('MSFullscreenChange', buttonVisibility);
