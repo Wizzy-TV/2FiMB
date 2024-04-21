@@ -20,5 +20,7 @@ FiMBbtn.style.zIndex = '9999';
 FiMBbtn.style.border = 'none';
 FiMBbtn.style.padding = '0';
 FiMBbtn.style.margin = '0';
+FiMBbtn.style.right = '20px';
+FiMBbtn.style.bottom = '20px';
 
 document.body.appendChild(FiMBbtn);
