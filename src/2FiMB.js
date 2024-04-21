@@ -15,5 +15,6 @@ FiMBbtn.innerHTML = `
 
 FiMBbtn.style.position = 'fixed';
 FiMBbtn.style.zIndex = '9999';
+FiMBbtn.style.border = 'none';
 
 document.body.appendChild(FiMBbtn);
