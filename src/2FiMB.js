@@ -13,8 +13,12 @@ FiMBbtn.innerHTML = `
     </svg>
 `;
 
+FiMBbtn.querySelector('svg').style.display = 'block';
+
 FiMBbtn.style.position = 'fixed';
 FiMBbtn.style.zIndex = '9999';
 FiMBbtn.style.border = 'none';
+FiMBbtn.style.padding = '0';
+FiMBbtn.style.margin = '0';
 
 document.body.appendChild(FiMBbtn);
