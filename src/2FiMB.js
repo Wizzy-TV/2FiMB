@@ -25,4 +25,13 @@ FiMBbtn.style.background = 'rgba(0, 0, 0, 0.4)';
 FiMBbtn.style.right = '20px';
 FiMBbtn.style.bottom = '20px';
 
+FiMBbtn.addEventListener('touchstart', function() {
+    FiMBbtn.style.transition = 'background 0.4s';
+    FiMBbtn.style.background = 'rgba(0, 0, 0, 0.8)';
+});
+FiMBbtn.addEventListener('touchend', function() {
+    FiMBbtn.style.transition = 'background 0.4s';
+    FiMBbtn.style.background = 'rgba(0, 0, 0, 0.4)';
+});
+
 document.body.appendChild(FiMBbtn);
