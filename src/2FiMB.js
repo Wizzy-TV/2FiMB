@@ -34,4 +34,8 @@ FiMBbtn.addEventListener('touchend', function() {
     FiMBbtn.style.background = 'rgba(0, 0, 0, 0.4)';
 });
 
+FiMBbtn.addEventListener('click', function() {
+    document.querySelector("html").requestFullscreen();
+});
+
 document.body.appendChild(FiMBbtn);
