@@ -91,11 +91,10 @@ document.addEventListener('touchmove', function(e) {
 }, { passive: false });
 
 function buttonVisibility() {
-    var button = document.querySelector('button');
     if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement) {
-        button.style.display = 'none';
+        FiMBbtn.style.display = 'none';
     } else {
-        button.style.display = 'block';
+        FiMBbtn.style.display = 'block';
     }
 }
 
