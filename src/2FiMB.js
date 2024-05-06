@@ -24,8 +24,8 @@ FiMBbtn.style.margin = '0';
 FiMBbtn.style.background = 'rgba(0, 0, 0, 0.4)';
 FiMBbtn.style.right = '20px';
 FiMBbtn.style.bottom = '20px';
-FiMBbtn.style.width = '30';
-FiMBbtn.style.height = '30';
+FiMBbtn.style.width = '30 !important';
+FiMBbtn.style.height = '30 !important';
 
 FiMBbtn.addEventListener('touchstart', function() {
     FiMBbtn.style.transition = 'background 0.4s';
